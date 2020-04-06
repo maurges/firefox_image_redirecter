@@ -1,0 +1,9 @@
+{
+    "name": "image_redirecter",
+    "version": "1.0.0",
+    "description": "See manifest.json",
+    "devDependencies": {
+        "purescript": "^0.13.6",
+        "spago": "^0.14.0"
+    }
+}

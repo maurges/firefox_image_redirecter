@@ -1,0 +1,13 @@
+{ "manifest_version": 2
+, "name": "image_redirecter"
+, "version": "1.0"
+
+, "description": "Redirect image pages to images"
+
+, "permissions":
+    [ "webRequest"
+    , "webRequestBlocking"
+
+    , "*://localhost:9999/*"
+    ]
+}
