@@ -3,6 +3,8 @@ let upstream =
 
 let overrides = {=}
 
-let additions = {=}
+let additions =
+  { web-extensions = ./lib/web-extensions/spago.dhall as Location
+  }
 
 in  upstream // overrides // additions
