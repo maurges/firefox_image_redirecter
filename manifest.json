@@ -8,6 +8,10 @@
     [ "webRequest"
     , "webRequestBlocking"
 
-    , "*://localhost:9999/*"
+    , "*://localhost/*"
     ]
+
+, "background":
+    { "scripts": ["./build/background.js"]
+    }
 }
