@@ -65,11 +65,9 @@ processHeaders
     -> HeadersReceivedDetails
     -> Effect (Options HeadersReceivedResponse)
 processHeaders avar (HeadersReceivedDetails details) = do
-    Console.log "waouw"
     for_ details.responseHeaders \header -> do
         case toLower header.name of
             "location" -> do
-                Console.log $ "redirects to: " <> header.value
                 urls <- Ref.read avar
                 Ref.write (insert header.value urls) avar
             _ -> pure unit
