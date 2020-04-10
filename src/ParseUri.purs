@@ -12,17 +12,18 @@ import Text.Parsing.Parser (runParser)
 import URI.AbsoluteURI (AbsoluteURI (..))
 import URI.Authority (Authority (..))
 import URI.HierarchicalPart (HierarchicalPart (HierarchicalPartAuth))
+import URI.Path (Path (..))
+import URI.Path.Segment (segmentToString)
 
 import URI.AbsoluteURI as AbsoluteUri
 import URI.Host as Host
 import URI.HostPortPair as HostPortPair
-import URI.Path as Path
 import URI.Port as Port
 import URI.Query as Query
 import URI.Scheme as Scheme
 
 type GoodUri =
-    {scheme :: String, host :: String, path :: String, query :: String}
+    {scheme :: String, host :: String, path :: Array String, query :: String}
 
 -- | Purescript has a big "standard library", by which i mean libraries written
 -- | by language contributors themselves. But it's really sad that most of the
@@ -48,7 +49,7 @@ parseFuckingUri str = do
             -> pure $ Tuple host path
         _   -> Nothing
     let host = printHost host'
-    let path = Path.print path'
+    let path = case path' of Path segs -> map segmentToString segs
     pure {scheme: scheme, host: host, path: path, query: query}
     where
         options =

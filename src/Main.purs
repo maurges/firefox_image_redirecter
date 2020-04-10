@@ -2,6 +2,7 @@ module Main (main) where
 
 import Prelude
 import Browser.Event (addListener)
+import Data.Array (uncons, null)
 import Data.HashSet (HashSet, member, insert, delete)
 import Data.Maybe (Maybe (Just, Nothing))
 import Data.Options (Options, (:=))
@@ -52,10 +53,12 @@ beforeRequst avar (BeforeRequestDetails details) = do
 redirectTo :: String -> Maybe String
 redirectTo url = do
     parsed <- parseFuckingUri url
+    {head: path, tail: rest} <- uncons parsed.path
     case unit of
       _ | startsWith "i." parsed.host -> Nothing
-        | parsed.path == "/favicon.ico" -> Nothing
-      _ -> Just $ parsed.scheme <> "//i." <> parsed.host <> parsed.path <> ".png"
+        | path == "favicon.ico" -> Nothing
+        | not $ null rest  -> Nothing
+      _ -> Just $ parsed.scheme <> "//i." <> parsed.host <> "/" <> path <> ".png"
 
 processHeaders
     :: Ref (HashSet String)
