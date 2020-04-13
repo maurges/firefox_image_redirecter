@@ -10,3 +10,8 @@ you to `https://i.imgur.com/nWjVtF1.png`
 Requires npm. Go into the extension folder and write `make link` - this will
 install and build everything for you. Than you can just load `manifest.json` in
 your browser, and it will work.
+
+## License
+
+Created by d86leader, 2020. Distributed under GNU GPL v3. You should have
+received a copy of this license with this software [here](./LICENSE)

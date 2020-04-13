@@ -1,3 +1,7 @@
+-- Author: d86leader@mail.com
+-- License: GNU GPL v3; you should have received a copy of the license text
+--  with this source file; if you haven't, see:
+--  https://github.com/d86leader/firefox_image_redirecter/blob/master/LICENSE
 module Main (main) where
 
 import Prelude
