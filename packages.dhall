@@ -5,6 +5,11 @@ let overrides = {=}
 
 let additions =
   { web-extensions = ./lib/web-extensions/spago.dhall as Location
+  , undefined-or =
+    { dependencies = [ "maybe" ]
+    , repo = "https://github.com/d86leader/purescript-undefined-or"
+    , version = "15709a1eb7efdefc1f79f18f1c390b53ba33fd5f"
+    }
   }
 
 in  upstream // overrides // additions
