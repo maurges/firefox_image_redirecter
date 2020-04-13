@@ -4,6 +4,7 @@
     "description": "See manifest.json",
     "devDependencies": {
         "purescript": "^0.13.6",
-        "spago": "^0.14.0"
+        "spago": "^0.14.0",
+        "web-ext": "^4.1.0"
     }
 }
