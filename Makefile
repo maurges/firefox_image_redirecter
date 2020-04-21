@@ -14,4 +14,4 @@ node_modules:
 	npm install
 
 pack: build/background.js
-	npx web-ext build -i lib -i output -i
+	npx web-ext build -i output -i lib
