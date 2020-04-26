@@ -1,5 +1,8 @@
 # Image Redirecter
 
+Get the latest release on AMO:
+https://addons.mozilla.org/en-US/firefox/addon/pure-image-redirecter/
+
 A firefox extension for imgur.com. It automatically redirects you from image
 pages to images themselves without ever loading the page. So if your friend
 sends you a link to `https://imgur.com/nWjVtF1`, it will automatically redirect
